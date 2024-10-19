@@ -19,6 +19,9 @@ function Decision(value) {
   const player2 = player1 === 'head' ? 'tail' : 'head';
   const randamValue = randamChoice();
 
+  console.log(`Player 1: ${player1}`);
+  console.log(`Player 2: ${player2}`);
+
   let playerWin;
 
   if (player1 === randamValue) {
@@ -27,11 +30,10 @@ function Decision(value) {
     playerWin = 'Player 2 Win';
   }
   player.innerText = playerWin;
+  console.log(`Player Win: ${playerWin}`);
 
   dice.classList.remove('dice');
 
-
-  // Update the dice click listener each time a decision is made
   dice.onclick = () => {
     Dice(playerWin);
   }
@@ -40,14 +42,13 @@ function Decision(value) {
 function Dice(playerWin) {
   let random1 = Math.floor(Math.random() * 3);
   let random2 = Math.floor(Math.random() * 3);
-  console.log(random1, random2);
+  console.log(`Outside condition ${random1}, ${random2}`);
 
 
-  // Check for doubles
+
   if (random1 === 6 && random2 === 6) {
-    console.log(random1, random2);
+    console.log(`Inside condition ${random1}, ${random2}`);
 
-    // Increment the win count based on the winner
     if (playerWin === 'Player 1 Win') {
       player1Count++;
       p1.innerText = `Player 1 Win Count: ${player1Count}`;
