@@ -40,8 +40,8 @@ function Decision(value) {
 }
 
 function Dice(playerWin) {
-  let random1 = Math.floor(Math.random() * 3);
-  let random2 = Math.floor(Math.random() * 3);
+  let random1 = Math.floor(Math.random() * 7);
+  let random2 = Math.floor(Math.random() * 7);
   console.log(`Outside condition ${random1}, ${random2}`);
 
 
